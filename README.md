@@ -5,6 +5,8 @@ Chatbot 실습에서 필요한 Web Channel과 WebView 샘플을 Embed한 예제
 
 샘플 이용방법 상세는 다음을 참고
 
+[Oracle JET 샘플 - Chatbot 실습 용 - 설명](https://mee-nam-lee.github.io/jet/2019/jet/)
+
 # 참고 자료
 - [Oracle JET Cookbook](https://www.oracle.com/webfolder/technetwork/jet/jetCookbook.html)
 - [Oracle Chatbot Javascript SDK](https://www.oracle.com/downloads/cloud/amce-downloads.html)
