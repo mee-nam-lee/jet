@@ -1,0 +1,24 @@
+[
+    {
+      "idDomain" : "univ",
+      "userId" : "user0",
+      "password" : "welcome0",
+      "botConUrl" : "http://aaa.com",
+      "botName" : "MasterBot",
+      "botName2" : "PizzaBot",
+      "webChannel" : "http://bbb.com",
+      "webview" : "/?root=webview?callbackUrl=http://<bot-url>/connectors/v1/callback?state=cb5443 . .. 2c&param1="
+
+    },
+    {
+      "idDomain" : "univ1",
+      "userId" : "user1",
+      "password" : "welcome1",
+      "botConUrl" : "http://aaaaaa.com",
+      "botName" : "MasterBot",
+      "botName2" : "PizzaBot",
+      "webChannel" : "http://bbbbbb.com",
+      "webview" : "/?root=webview?callbackUrl=http://<bot-url>/connectors/v1/callback?state=cb5443 . .. 2c&param1="
+
+    }
+  ]

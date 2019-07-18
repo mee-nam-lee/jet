@@ -1,0 +1,57 @@
+<!--
+ Copyright (c) 2014, 2019, Oracle and/or its affiliates.
+ The Universal Permissive License (UPL), Version 1.0
+ -->
+<div class="oj-hybrid-padding">
+    <h1>WebView Test </h1>
+    <div class="oj-flex oj-flex-items-pad">
+
+
+        <div style="padding-top: 30px; min-width: 100%;">
+                <div>
+                        <p>검색하신 조건은 : "<oj-bind-text value="[[param1]]"></oj-bind-text>" 입니다.</p>
+                </div>
+
+            <oj-table id='table' aria-label='Table'
+            data='[[dataprovider]]'
+            columns='{{columnArray}}'
+            scroll-policy='loadMoreOnScroll'
+            scroll-policy-options.fetch-size='3'
+            selected.row='{{selectedItems}}'
+            on-selected-changed="{{selectionListener}}"
+            selection-mode='{"row": "single"}' 
+            columns-default='{"sortable": "enabled"}'
+            style='width: 100%;'>
+            <template slot="checkTemplate" data-oj-as="cell">
+            <oj-checkboxset value='[[handleCheckbox(cell.key)]]'
+                on-value-changed='[[checkboxListener]]'
+                class='oj-checkboxset-no-chrome oj-selection-checkbox'
+                :id="[['table_checkboxset' + cell.key]]"
+                :data-row-key="{{cell.row.id}}">
+            <oj-option :id="[['table_checkbox' + cell.key]]" value="checked"></oj-option>
+            </oj-checkboxset>   
+            </template>
+
+            <template slot="imageTemplate" data-oj-as="cell">
+                <img id="laptop" alt="laptop" data-bind="attr: { src: cell.row.image }" >
+            </template>
+
+            <template slot="modelTemplate" data-oj-as="cell">
+                <span><a data-bind="attr: {href : cell.row.link }" target="_blank">
+                    <oj-bind-text value="[[cell.row.model]]"></oj-bind-text></a></span>
+            </template>
+        </oj-table>
+    </div>
+</div>
+        <br/>
+        <!--
+             <oj-input-text  value=[[selectedIdx]]></oj-input-text>
+        -->
+    <div style="padding-top: 10px;">
+        <oj-button id="buttonOpener" on-oj-action="[[complete]]">
+            선택완료
+        </oj-button>
+        <span><oj-bind-text value="[[resultmsg]]"></oj-bind-text></span>
+    </div>
+
+</div>

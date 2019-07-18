@@ -1,0 +1,23 @@
+<!--
+ Copyright (c) 2014, 2019, Oracle and/or its affiliates.
+ The Universal Permissive License (UPL), Version 1.0
+ -->
+<div class="oj-hybrid-padding">
+  <h1>Login</h1>
+  <div>
+      <oj-form-layout id="myform"  label-edge="start" max-columns="1" direction="column">
+          <oj-input-text label-hint="Email : " placeholder="이메일을 입력해 주세요" 
+                value='{{ email }}' validators="[[emailPatternValidator]]" 
+                messages-custom="{{emailmessages}}" required="true"></oj-input-text>
+          <oj-input-password label-hint="Password : " id="password"
+                placeholder="패스워드를 입력해 주세요" value='{{ password }}'
+                messages-custom="{{passwordmessages}}" required="true"></oj-input-password>
+        <div style="text-align: center;">
+          <div style="display: inline-block;">
+          <oj-button class='oj-button-primary'  on-oj-action='[[doLogin]]' chroming='full'> Login </oj-button>
+        </div>
+        </div>
+       </oj-form-layout>
+  </div>
+
+</div>

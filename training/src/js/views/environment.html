@@ -1,0 +1,125 @@
+<!--
+ Copyright (c) 2014, 2019, Oracle and/or its affiliates.
+ The Universal Permissive License (UPL), Version 1.0
+ -->
+<div class="oj-hybrid-padding">
+    <h1>Your Training Environment</h1>
+    <div class="oj-flex oj-flex-items-pad">
+        <div id="slider-container" style="padding-top: 10px;">
+            <oj-label for="slider"> 제공된 Environment 번호를 선택하세요 </oj-label>
+            <oj-slider id="slider" value="{{selectedIdx}}" min="[[min]]" max="[[max]]" step="[[step]]"
+                on-value-changed="[[valueSelected]]"> </oj-slider>
+            <br>
+            <span> Environment # : </span>
+            <span id="selectedIdx" data-bind="text: selectedIdx"></span>
+        </div>
+
+        <div style="padding-top: 30px; min-width: 100%;">
+            <oj-list-view id="listview" aria-label="your enviroment data" selection-mode="single">
+                <ul>
+                    <li>
+
+                        <div class="oj-flex" style="width:90%; ">
+
+                            <div class="oj-flex-item" style="width:90%">
+                                <div class="oj-lg-10 oj-md-10 oj-sm-12">
+                                    <div class="oj-flex row">
+                                        <div class="oj-lg-12">
+                                            <span class="oj-fwk-icon oj-fwk-icon-caret-end"
+                                                slot="startIcon">&nbsp;</span>
+                                            <span class="oj-text-primary-color">Access Information</span>
+                                        </div>
+                                    </div>
+                                    <div class="oj-flex row" style="padding-left: 30px; padding-top: 10px;">
+                                        <div class="oj-lg-4 oj-md-4 oj-sm-12">
+                                            <span class="data"><b>Identity Domain: </b><span>
+                                                    <oj-bind-text value="[[idDomain]]"></oj-bind-text>
+                                                </span></span>
+                                        </div>
+                                        <div class="oj-lg-4 oj-md-4 oj-sm-12">
+                                            <span class="data"><b>User Name: </b><span>
+                                                    <oj-bind-text value="[[userId]]"></oj-bind-text>
+                                                </span></span>
+                                        </div>
+                                        <div class="oj-lg-4 oj-md-4 oj-sm-12">
+                                            <span class="data"><b>Password: </b><span>
+                                                    <oj-bind-text value="[[password]]"></oj-bind-text>
+                                                </span></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="container">
+                            <div>
+                                <span class="oj-fwk-icon oj-fwk-icon-caret-end" slot="startIcon">&nbsp;</span>
+                                <span class="oj-text-primary-color">Chatbot URL</span>
+                            </div>
+                            <div style="padding-top: 5px; padding-left: 30px;">
+                                <span><a data-bind="attr: {href : botConUrl }" target="_blank">바로가기</a></span>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="container">
+                            <div>
+                                <span class="oj-fwk-icon oj-fwk-icon-caret-end" slot="startIcon">&nbsp;</span>
+                                <span class="oj-text-primary-color">WebChannel URL</span>
+                            </div>
+                            <div style="padding-top: 5px; padding-left: 30px;">
+                                <span><a data-bind="attr: {href : webChannel }" target="_blank">바로가기</a></span>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="container">
+                            <div>
+                                <span class="oj-fwk-icon oj-fwk-icon-caret-end" slot="startIcon">&nbsp;</span>
+                                <span class="oj-text-primary-color">WebView URL</span>
+                            </div>
+                            <div style="padding-top: 5px; padding-left: 30px;">
+                                <span><a data-bind="attr: {href : webview }" target="_blank">바로가기</a></span>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </oj-list-view>
+        </div>
+    </div>
+
+
+    <div style="padding-top: 10px;">
+        <oj-button id="buttonOpener" on-oj-action="[[open]]">
+            App ID 설정
+        </oj-button>
+        <oj-button id="buttonClear" on-oj-action="[[clear]]">
+            Bot 대화 Clear
+        </oj-button>
+    </div>
+    <div>
+
+        <div id="dialogWrapper">
+            <oj-dialog style="display:none; width: 400px; min-width: 100px; max-width: 500px;" id="appSetDialog"
+                dialog-title="App ID Setting">
+                <div slot="body">
+                    연결할 Bot Web Channel의 App ID를 입력하세요 <br /><br />
+                    <oj-form-layout id="appsetting" label-edge="start" max-columns="1" direction="column">
+                        <oj-input-text label-hint="App ID : " placeholder="App ID를 입력해 주세요" value='{{ appId }}'
+                            required="true"></oj-input-text>
+                    </oj-form-layout>
+                </div>
+                <div slot="footer">
+                    <oj-button id="setButton" on-oj-action="[[setAppId]]">Save</oj-button>
+                    <oj-button id="cancelButton" on-oj-action="[[close]]">Cancel</oj-button>
+                </div>
+            </oj-dialog>
+
+        </div>
+
+    </div>
+
+</div>
